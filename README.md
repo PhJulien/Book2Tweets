@@ -1,0 +1,1 @@
+Books2Tweet is a simple Python script turning a set of ebooks in txt formats into tweets, or, more generally, sentences of a desired length.
