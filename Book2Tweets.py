@@ -45,9 +45,9 @@ for file in files:
 
 
         tw = [s for s in sentences if (len(s) >= min_len and len(s) <= max_len)]
-        tw2 = [s for s in sentences if len(s)==141]
-        tw2 = [t[0:140] for t in tw2]
+        tw2 = [s for s in sentences if len(s)==max_len + 1]
         tws = tw + tw2
+
         shuffle(tws)
         print >> sys.stderr, str(len(tws)) + " extractions"
         tot += len(tws)
