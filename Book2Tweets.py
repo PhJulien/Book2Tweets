@@ -5,7 +5,7 @@ from random import shuffle
 
 
 ##### First we need to match the file name to the title
-ann_file = "/Users/pjulien/Dropbox/Code/text_phylo/Darwin_book_info.txt"
+ann_file = "./Darwin_book_info.txt"
 info = {}
 dates = {}
 try:
@@ -20,10 +20,10 @@ except IOError:
 
 
 min_len = 100
-max_len = 140
+max_len = 280
 i = 0
 
-files = glob.glob("/Users/pjulien/Dropbox/Code/text_phylo/Darwin/*.txt")
+files = glob.glob("./Darwin/*.txt")
 #file = "/Users/pjulien/Dropbox/Code/text_phylo/Darwin/OriginofSpecies.txt"
 tot = 0
 for file in files:
