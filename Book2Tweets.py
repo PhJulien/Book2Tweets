@@ -43,12 +43,16 @@ for file in files:
         text = " ".join(tab)
         sentences = re.split(r'(?<=[^A-Z].[.?]) +(?=[A-Z])', text)
 
-
+        # Selecting sentences of desired length only
         tw = [s for s in sentences if (len(s) >= min_len and len(s) <= max_len)]
+
+        # If the sentence is 1 characther longer than the max value, we remove the last character (generally a dot)
         tw2 = [s for s in sentences if len(s)==max_len + 1]
         tws = tw + tw2
 
+        # We shuffle the list for randomised printing later
         shuffle(tws)
+
         print >> sys.stderr, str(len(tws)) + " extractions"
         tot += len(tws)
         for t in tws:
@@ -57,3 +61,4 @@ for file in files:
     except IOError:
         print >> sys.stderr, "Error. Could not open file " + str(file)
     
+print >> sys.stderr, "Extracted " + str(tot) + " sentences in total"
